@@ -10,13 +10,13 @@ app.use(morgan('dev'));
 
 const PORT = process.env.PORT ?? 3000;
 
-const indexRouter = require('./routes/index.routes');
+const indexRouter = require('./routes/index.route');
 
 config(app);
 
 app.use('/', indexRouter);
 
-
 app.listen(PORT, () => {
   console.log(`сервак шуршит на ${PORT} порте`);
 });
+//kjvv
