@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.44.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.25.3",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^1.14.9"
   },
@@ -38,5 +38,13 @@
     "sequelize-cli": "^5.3.0",
     "session-file-store": "^1.5.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karabeshkin/BadBadNotGood.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Karabeshkin/BadBadNotGood/issues"
+  },
+  "homepage": "https://github.com/Karabeshkin/BadBadNotGood#readme",
   "description": ""
 }
