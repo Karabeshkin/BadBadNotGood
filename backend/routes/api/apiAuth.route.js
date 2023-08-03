@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
-const { User } = require('../../db/db/models');
+const { User } = require('../../db/models');
 
 // ? регистрация пользователя
 router.post('/reg', async (req, res) => {
