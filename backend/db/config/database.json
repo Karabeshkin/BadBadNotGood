@@ -5,7 +5,7 @@
     "password": "qq",
     "database": "MyGame_db",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
 
     "password": "postgres",
     "database": "MyGame_db",
