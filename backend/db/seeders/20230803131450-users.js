@@ -8,6 +8,10 @@ module.exports = {
         login: "Тося",
         password: "123",
         email: "345@mail.ru",
+
+
+        score: 0,
+
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -15,6 +19,10 @@ module.exports = {
         login: "Jopa",
         password: "1234",
         email: "ya_ne@mail.ru",
+
+
+        score: 0,
+
         createdAt: new Date(),
         updatedAt: new Date(),
       },
