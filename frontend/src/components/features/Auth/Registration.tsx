@@ -4,14 +4,16 @@ export default function Registration():JSX.Element {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const dispatch = useDispatch();
+  const { error } = useSelector((store:RootState) => store.auth);
 
 
   const registr = (e:React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
-   api.registrFetch({ name, password, email })
+    api.registrFetch({ name, password, email })
    .then((data) => dispatch({ type: 'auth/reg', payload: data }));
  };
- 
+
   return (
     <div>
       <form onSubmit={registr}>
