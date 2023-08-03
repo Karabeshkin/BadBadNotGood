@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import * as api from './api'
 
 export default function Registration():JSX.Element {
   const [name, setName] = useState('');
@@ -10,7 +11,7 @@ export default function Registration():JSX.Element {
 
   const registr = (e:React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
-    api.registrFetch({ name, password, email })
+    api.registrFetch({ name, password, email }) 
    .then((data) => dispatch({ type: 'auth/reg', payload: data }));
  };
 

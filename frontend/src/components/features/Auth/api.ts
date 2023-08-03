@@ -1,6 +1,6 @@
-import { Registr, User } from './type';
+import { Registration, User } from './type';
 
-export const registrFetch = async (obj:Registr):Promise<User> => {
+export const registrFetch = async (obj:Registration):Promise<User> => {
 const res = await fetch('/api/auth/reg', {
     method: 'post',
     headers: {
@@ -8,8 +8,8 @@ const res = await fetch('/api/auth/reg', {
     },
     body: JSON.stringify(obj)
 });
-const data = await res.json();
-return data;
+  const data = await res.json();
+  return data;
 };
 export const verificationFetch = async ():Promise<User> => {
     const res = await fetch('/api/auth/verification');

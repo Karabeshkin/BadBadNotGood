@@ -23,6 +23,7 @@ module.exports = {
         allowNull: false,
       },
       score: {
+        defaultValue: 0,
         type: Sequelize.INTEGER,
       },
       createdAt: {
