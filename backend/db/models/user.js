@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       score: {
+        defaultValue: 0,
         type: DataTypes.INTEGER,
       },
     },
