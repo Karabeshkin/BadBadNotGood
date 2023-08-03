@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
-import Test from "../features/Auth/ModalWindow/Test";
+import { Routes, Route } from 'react-router-dom'
+import Registration from "../features/Auth/Registration";
+// import Test from "../features/ModalWindow/Test";
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Routes>
+        <Route path="/" element={<Registration />} />
+      </Routes>
+      {/* <Test /> */}
     </div>
   );
 }
