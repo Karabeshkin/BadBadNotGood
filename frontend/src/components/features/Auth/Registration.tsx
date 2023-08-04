@@ -13,8 +13,8 @@ export default function Registration():JSX.Element {
 
   const registr = (e:React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
-    api.registrFetch({ name, password, email, score: 0 }) 
-   .then((data) => dispatch({ type: 'auth/reg', payload: data }));
+    api.registrationFetch({ name, password, email, score: 0 }) 
+   .then((data) => dispatch({ type: 'auth/registration', payload: data }));
  };
 
   return (

@@ -11,3 +11,8 @@ export type User = {
     id:number;
     score: number;
 }
+
+export type Authorization = {
+  name: string;
+  password: string;
+}
