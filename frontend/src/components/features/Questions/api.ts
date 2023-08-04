@@ -1,4 +1,7 @@
-export const poinTotalUser = async (obj: { points: number; id: number }) => {
+export const poinTotalUser = async (obj: {
+  points: number;
+  id: number;
+}): Promise<{ score: number }> => {
   const res = await fetch(`/api/score/${obj.id}`, {
     method: "PUT",
     headers: {

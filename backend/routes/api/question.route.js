@@ -9,9 +9,9 @@ router.put("/:id", (req, res) => {
     const { points } = req.body;
     const { id } = req.params;
 
-    let user = User.findOne({ where: { id } });
+    const user = User.findOne({ where: { id } });
     user.score = points;
-    res.json({ user });
+    res.json({ score: user.score });
   } catch (error) {
     res.json({ message: error.message });
   }
