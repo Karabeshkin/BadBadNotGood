@@ -4,7 +4,7 @@ import { State } from './type';
 const init = { user: {}, error: '' };
   const reducerAuth = (state:State = init, action:Action):State => {
     switch (action.type) {
-        case 'auth/reg':
+        case 'auth/registration':
             if ('message' in action.payload) {
                 return {
                     ...state,

@@ -5,7 +5,7 @@ import reducerAuth from '../features/Auth/reducer/reducer';
 
 const rootReducer = combineReducers({
 auth: reducerAuth,
-// flowers: reducerFlowers
+// game: 
 });
 
 export default rootReducer;
