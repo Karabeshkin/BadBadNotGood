@@ -1,11 +1,10 @@
-import { combineReducers } from 'redux';
-// import reducerAuth from '../features/Auth/reducer/reducer';
+import {combineReducers} from 'redux';
 import reducerAuth from '../features/Auth/reducer/reducer';
-// import reducerFlowers from '../features/Flowers/reducer/reducer';
+import reducerTheme from '../features/Questions/reducer/reduser';
 
 const rootReducer = combineReducers({
-auth: reducerAuth,
-// flowers: reducerFlowers
+  auth: reducerAuth,
+  theme: reducerTheme,
 });
 
 export default rootReducer;
