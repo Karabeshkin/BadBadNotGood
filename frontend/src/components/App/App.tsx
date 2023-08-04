@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 import Registration from "../features/Auth/Registration";
+import ModalAnswer from "../features/Questions/ModalAnswer";
 // import Test from "../features/ModalWindow/Test";
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Registration />} />
+        <Route path="/game" element={<ModalAnswer />} />
       </Routes>
-      {/* <Test /> */}
     </div>
   );
 }
