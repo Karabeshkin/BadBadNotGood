@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as api from "./api";
+import { RootState } from "../../store/store";
 
 const question = {
   themeId: 1,
   question: "А хули",
-  answer: "Тебя ебать не должо",
+  answer: "Тебя ебать не должно",
   score_points: 100,
 };
-const user = {
-  id: 1,
-  login: "Тося",
-  email: "345@mail.ru",
-  score: 0,
-};
+// const user = {
+//   id: 1,
+//   login: "Тося",
+//   email: "345@mail.ru",
+//   score: 0,
+// };
 
 function ModalAnswer(): JSX.Element {
-  // const { user } = useSelector((store: RootState) => store.auth);
+  const { user } = useSelector((store: RootState) => store.auth);
   const [otvet, setOtvet] = useState("");
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
@@ -34,8 +35,7 @@ function ModalAnswer(): JSX.Element {
       }
       api
         .poinTotalUser({ points: poinScore, id: user.id })
-        // .then((data) => dispatch({ type: "user/score", payload: data }));
-        .then((data) => console.log(data));
+        .then((data) => dispatch({ type: "user/score", payload: data }));
     }
   }
 
