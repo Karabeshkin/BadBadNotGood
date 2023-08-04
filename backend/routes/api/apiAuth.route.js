@@ -47,4 +47,35 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/logout', (req, res) => {
+  // удаление сессии на сервере
+  req.session.destroy((error) => {
+    if (error) {
+      return res.status(500).json({ message: 'Ошибка при удалении сессии' });
+    }
+
+    res
+      .clearCookie('user_sid') // серверное удаление куки по имени
+      .json({ message: 'Успешный выход' });
+  });
+});
+
+router.get('/verification', async (req, res) => {
+  try {
+    const { userId } = req.session;
+    if (userId) {
+      const user = await User.findOne({
+        where: { id: userId },
+        attributes: { exclude: ['password', 'createdAt', 'updatedAt'] },
+
+      });
+      res.status(201).json(user);
+    } else {
+      res.status(403).json({ message: 'не в сети' });
+    }
+  } catch ({ message }) {
+    res.status(500).json({ message });
+  }
+});
+
 module.exports = router;
