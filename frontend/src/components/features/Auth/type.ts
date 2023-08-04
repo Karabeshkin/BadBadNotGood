@@ -1,18 +1,21 @@
 export type Registration = {
-    name:string;
-    email:string;
-    password:string;
-    score: number;
+  login: string;
+  email: string;
+  password: string;
+  score: number;
 };
 
 export type User = {
-    name:string;
-    email:string;
-    id:number;
-    score: number;
-}
+  id: number;
+  login: string;
+  email: string;
+  score: number;
+};
+
+
 
 export type Authorization = {
-  name: string;
+  login: string;
   password: string;
 }
+
