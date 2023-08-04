@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-logo {
@@ -37,6 +39,14 @@
   }
 }
 
+
+.all {
+  display: flex;
+}
+
+.question {
+  display: flex;
+
 .logo-image{
   width: 400px;
 }
@@ -66,4 +76,5 @@
 
 .navbar ul li a:hover {
   background-color: #ddd;
+
 }

@@ -1,8 +1,30 @@
-const express = require("express");
 
 const router = express.Router();
+const express = require('express');
 
+
+const {Question, Theme} = require('../../db/models');
 const { User } = require("../../db/models");
+
+
+router.get('/', async (req, res) => {
+  try {
+    const questions = await Theme.findAll({
+      include: [
+        {
+          model: Question,
+        },
+      ],
+    });
+    console.log(questions);
+    res.json(questions);
+  } catch (error) {
+    res.json({message: error.message});
+
+  }
+});
+
+
 
 router.put("/:id", (req, res) => {
   try {
@@ -14,6 +36,7 @@ router.put("/:id", (req, res) => {
     res.json({ score: user.score });
   } catch (error) {
     res.json({ message: error.message });
+
   }
 });
 

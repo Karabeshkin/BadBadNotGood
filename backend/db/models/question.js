@@ -1,9 +1,9 @@
-"use strict";
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Question extends Model {
     static associate({ Theme }) {
-      this.belongsTo(Theme, { foreignKey: "themeId" });
+      this.belongsTo(Theme, { foreignKey: 'themeId' });
     }
   }
   Question.init(
@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.INTEGER,
         references: {
-          key: "id",
-          model: "Themes",
+          key: 'id',
+          model: 'Themes',
         },
-        onDelete: "CASCADE",
+        onDelete: 'CASCADE',
       },
       question: {
         allowNull: false,
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Question",
-    }
+      modelName: 'Question',
+    },
   );
   return Question;
 };
