@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 import { RootState } from '../../store/store';
 
 export default function Authorization():JSX.Element {
-  const [name, setName] = useState('');
+  const [login, setName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
 
   const authorization = (e:React.FormEvent<HTMLFormElement>):void => {
     e.preventDefault();
-    api.authorizationFetch({ name, password }) 
+    api.authorizationFetch({ login, password }) 
    .then((data) => dispatch({ type: 'auth/authorization', payload: data }));
  };
 
