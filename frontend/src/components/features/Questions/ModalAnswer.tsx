@@ -9,15 +9,15 @@ const question = {
   answer: "Тебя ебать не должно",
   score_points: 100,
 };
-// const user = {
-//   id: 1,
-//   login: "Тося",
-//   email: "345@mail.ru",
-//   score: 0,
-// };
+const user = {
+  id: 1,
+  login: "Тося",
+  email: "345@mail.ru",
+  score: 0,
+};
 
 function ModalAnswer(): JSX.Element {
-  const { user } = useSelector((store: RootState) => store.auth);
+  // const { user } = useSelector((store: RootState) => store.auth);
   const [otvet, setOtvet] = useState("");
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
@@ -25,9 +25,11 @@ function ModalAnswer(): JSX.Element {
   function submitForm(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     let poinScore = 0;
+    console.log();
+
     if ("id" in user) {
-      if (otvet === question.answer) {
-        setMessage("Все корректно, братик");
+      if (otvet.toLowerCase() === question.answer.toLowerCase()) {
+        setMessage("+Respect");
         poinScore = user.score + question.score_points;
       } else {
         setMessage(`no no no ${question.answer} BOT TAK HADO`);
