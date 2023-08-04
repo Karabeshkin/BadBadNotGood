@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import * as api from './api'
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,8 +22,9 @@ export default function Registration():JSX.Element {
 
 
 
-  const registr = (e:React.FormEvent<HTMLFormElement>):void => {
+  const registr = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+
     api.registrationFetch({ login, password, email, score: 0 }) 
    .then((data) => dispatch({ type: 'auth/registration', payload: data }));
 
@@ -30,14 +32,17 @@ export default function Registration():JSX.Element {
 
 
 
+
   return (
     <div>
       <form onSubmit={registr}>
+
             <input name="name" placeholder="name" required onChange={(e) => setName(e.target.value)} />
             <input type="password" name="password" placeholder="password" required onChange={(e) => setPassword(e.target.value)} />
             <input type="email" name="email" placeholder="email" required onChange={(e) => setEmail(e.target.value)} />
             <button type="submit">register</button>
         </form>
+
     </div>
-  )
+  );
 }
