@@ -42,17 +42,19 @@ function ModalAnswer(): JSX.Element {
   }
 
   return (
-    <div>
-      <div>{question.question}</div>
-      <form onSubmit={submitForm}>
-        <input
-          type="text"
-          placeholder="Ответ тут"
-          onChange={(e) => setOtvet(e.target.value)}
-        />
-        <button type="submit">X</button>
-      </form>
-      <div>{message}</div>
+    <div className="modalBig_container">
+      <div className="modal_container">
+        <div>{question.question}</div>
+        <form onSubmit={submitForm}>
+          <input
+            type="text"
+            placeholder="Ответ тут"
+            onChange={(e) => setOtvet(e.target.value)}
+          />
+          <button type="submit">X</button>
+        </form>
+        <div>{message}</div>
+      </div>
     </div>
   );
 }
