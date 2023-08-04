@@ -28,4 +28,4 @@ export const verificationFetch = async ():Promise<User> => {
     const res = await fetch('/api/auth/verification');
     const data = await res.json();
     return data;
-    };
+};
